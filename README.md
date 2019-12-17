@@ -12,6 +12,7 @@ this github repo is made for completing the given assignment
 * insert_data() -> insert data from excel sheet into database tables
 
 ### database model
+```mysql
 mysql> use assignment01_part01
 Database changed
 mysql> show tables
@@ -22,12 +23,13 @@ mysql> show tables
 | group_listing                 |
 | product_listing               |
 +-------------------------------+
-2 rows in set (0.48 sec)
+2 rows in set (0.48 sec)```
+```
 
 ### group listing sheet
 
-mysql> describe group_listing
-    -> ;
+```mysql
+mysql> describe group_listing;
 +-------------------+--------------+------+-----+---------+----------------+
 | Field             | Type         | Null | Key | Default | Extra          |
 +-------------------+--------------+------+-----+---------+----------------+
@@ -37,16 +39,19 @@ mysql> describe group_listing
 | isActive          | varchar(255) | YES  |     | NULL    |                |
 +-------------------+--------------+------+-----+---------+----------------+
 4 rows in set (0.18 sec)
+```
 
-mysql> select count(*) from group_listing
-    -> ;
+```mysql
+mysql> select count(*) from group_listing;
 +----------+
 | count(*) |
 +----------+
 |       22 |
 +----------+
-1 row in set (0.05 sec)
+1 row in set (0.05 sec)```
+```
 
+```mysql
 mysql> select * from group_listing limit 5;
 +------------------+------------+-------------------+----------+
 | group_listing_id | group_name | group_description | isActive |
@@ -57,12 +62,13 @@ mysql> select * from group_listing limit 5;
 |                4 | Group 4    | Group Number 4    | yes      |
 |                5 | Group 5    | Group Number 5    | yes      |
 +------------------+------------+-------------------+----------+
-5 rows in set (0.00 sec)
+5 rows in set (0.00 sec)```
+```
 
 ### product listing sheet
 
-mysql> describe product_listing
-    -> ;
+```mysql
+mysql> describe product_listing;
 +--------------------+--------------+------+-----+---------+----------------+
 | Field              | Type         | Null | Key | Default | Extra          |
 +--------------------+--------------+------+-----+---------+----------------+
@@ -73,17 +79,20 @@ mysql> describe product_listing
 | Group_Associated   | varchar(255) | YES  |     | NULL    |                |
 | product_MRP_rs     | int(11)      | YES  |     | NULL    |                |
 +--------------------+--------------+------+-----+---------+----------------+
-6 rows in set (0.03 sec)
+6 rows in set (0.03 sec)```
+```
 
-mysql> select count(*) from product_listing
-    -> ;
+```mysql
+mysql> select count(*) from product_listing;
 +----------+
 | count(*) |
 +----------+
 |      110 |
 +----------+
-1 row in set (0.39 sec)
+1 row in set (0.39 sec)```
+```
 
+```mysql
 mysql> select * from product_listing limit 5;
 +--------------------+----------------+-----------------+-------------------+------------------+----------------+
 | product_listing_id | Product_Name   | Model_Name      | Product_Serial_No | Group_Associated | product_MRP_rs |
@@ -94,4 +103,5 @@ mysql> select * from product_listing limit 5;
 |                  4 | Demo Product 1 | Product Model 1 |    98765987659804 | Group 4          |           1004 |
 |                  5 | Demo Product 1 | Product Model 1 |    98765987659805 | Group 5          |           1005 |
 +--------------------+----------------+-----------------+-------------------+------------------+----------------+
-5 rows in set (0.00 sec)
+5 rows in set (0.00 sec)```
+```
